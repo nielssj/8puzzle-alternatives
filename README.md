@@ -1,2 +1,2 @@
 # 8puzzle-alternatives
-Solution to Eight-puzzle AI problem implemented using different languages and frameworks
+Artifical Intelligence that solves 8 Puzzle. Implemented using different languages and frameworks
