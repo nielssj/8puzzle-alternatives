@@ -67,10 +67,14 @@ def heurestic_manhatten(node):
     return sum
 
 # goal state
-goal = (0, 1, 2, 3, 4, 5, 6, 7, 8)
+goal = (0, 1, 2,
+        3, 4, 5,
+        6, 7, 8)
 
 # Initial state
-s_init = (1, 6, 4, 8, 7, 0, 3, 2, 5)
+s_init = (1, 6, 4,
+          8, 7, 0,
+          3, 2, 5)
 
 # Instantiate problem
 problem = EightPuzzle(s_init, goal)
