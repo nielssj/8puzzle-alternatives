@@ -54,6 +54,17 @@ def heurestic_simple(node): # Note assumes goal is (0, 1, 2, 3, 4, 5, 6, 7, 8)
         sum += abs(pos - tile)
     return sum
 
+# Manhatten distance based heurestic (admissable)
+def heurestic_manhatten(node):
+    state_l = list(node.state)
+    sum = 0
+    for pos, tile in enumerate(state_l):
+        t_row = tile / 3                    # target row
+        t_col = tile % 3                    # target column
+        c_row = pos / 3                     # current row
+        c_col = pos % 3                     # current column
+        sum += abs(t_row - c_row) + abs(t_col - c_col)  # delta_row + delta_col
+    return sum
 
 # goal state
 goal = (0, 1, 2, 3, 4, 5, 6, 7, 8)
@@ -65,7 +76,7 @@ s_init = (1, 6, 4, 8, 7, 0, 3, 2, 5)
 problem = EightPuzzle(s_init, goal)
 
 # Solve problem using A*
-result = search.astar_search(problem, heurestic_simple)
+result = search.astar_search(problem, heurestic_manhatten)
 
 # Resulting list of moves
 solution = result.solution()
