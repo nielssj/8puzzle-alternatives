@@ -76,8 +76,12 @@ s_init = (1, 6, 4,
           8, 7, 0,
           3, 2, 5)
 
+s_init2 = (8, 1, 7,
+           4, 5, 6,
+           2, 0, 3)
+
 # Instantiate problem
-problem = EightPuzzle(s_init, goal)
+problem = EightPuzzle(s_init2, goal)
 
 # Solve problem using A*
 result = search.astar_search(problem, heurestic_manhatten)
